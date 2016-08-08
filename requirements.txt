@@ -1,0 +1,98 @@
+--System:
+Python 2.7.10
+Ubuntu 14.04.2
+VirtualEnv 13.1.2
+Scala version 2.10.4 
+
+--System prerequisties:
+sudo apt-get install python-dev libblas-dev liblapack-dev libatlas-base-dev gfortran libpng12-dev libfreetype6-dev libjpeg-dev tcl-dev tk-dev python-tk libboost-program-options-dev libboost-python-dev libsnappy-dev
+
+--Python prerequisites:
+pip install numpy scipy scikit-learn matplotlib csc-pysparse networkx divisi2
+
+--Installing Recsys:
+git clone https://github.com/ocelma/python-recsys.git
+cd python-recsys
+sudo python setup.py install
+--[under virtualenv ./venv/bin/python setup.py install]
+
+--Installing Movielens Dataset:
+wget http://files.grouplens.org/datasets/movielens/ml-1m.zip
+unzip ml-1m.zip
+
+--Installing VW (vw-8.1.1):
+git clone git://github.com/JohnLangford/vowpal_wabbit.git 
+make
+make test
+sudo make install
+
+--Installing PyBrain (PyBrain==0.3.3)
+git clone git://github.com/pybrain/pybrain.git pybrain
+cd pybrain
+sudo python setup.py install
+--[Under virtualenv: ./venv/bin/python setup.py install]
+
+--Installing KafkaPython :
+git clone https://github.com/dpkp/kafka-python.git
+git checkout v0.9.5
+cd kafka-python
+sudo python setup.py install
+--[Under virtualenv: ./venv/bin/python setup.py install]
+
+---This is a list of the versions of the requirements of the various packages installed above.
+....numpy-1.10.1
+....scipy-0.16.1
+....sklearn-0.17
+....matplotlib==1.5.0
+....csc-pysparse-1.1.1.4 
+....csc-utils-0.6.7 
+....divisi2-2.2.5
+....vowpal-wabbit-8.1.1
+
+---This is a complete snapshot of my python environment after installing the above to a clean virtualenv environment
+['backports-abc==0.4’, 
+'backports.ssl-match-hostname==3.4.0.2’, 
+'certifi==2015.11.20.1’, 
+'csc-pysparse==1.1.1.4’, 
+'csc-utils==0.6.7’, 
+'cycler==0.9.0’, 
+'decorator==4.0.4’,
+'divisi2==2.2.5’, 
+'functools32==3.2.3.post2’, 
+'ipython-genutils==0.1.0’, 
+'ipython==4.0.1’, 
+'jinja2==2.8’, 
+'jsonschema==2.5.1’, 
+'kafka-python==0.9.5’, 
+'markupsafe==0.23’, 
+'matplotlib==1.5.0’, 
+'networkx==1.10’, 
+'numpy==1.10.1’, 
+'pandas==0.17.1’, 
+'path.py==8.1.2’, 
+'pexpect==4.0.1’, 
+'pickleshare==0.5’, 
+'pillow==3.0.0’, 
+'pip==7.1.2’, 
+'ptyprocess==0.5’, 
+'pybrain==0.3.3’, 
+'pyparsing==2.0.6’, 
+'python-dateutil==2.4.2’, 
+'python-recsys==0.2’, 
+'pytz==2015.7’, 
+'pyzmq==15.1.0’, 
+'scikit-image==0.11.3’, 
+'scikit-learn==0.17’, 
+'scipy==0.16.1’, 
+'seaborn==0.6.0’, 
+'setuptools==18.2’, 
+'simplegeneric==0.8.1’, 
+'singledispatch==3.4.0.3’, 
+'six==1.10.0’, 
+'sklearn==0.0’, 
+'sympy==0.7.6.1’, 
+'tornado==4.3’, 
+'traitlets==4.0.0’, 
+'wheel==0.24.0']
+
+
